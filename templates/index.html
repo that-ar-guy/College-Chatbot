@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <title>NSAK BOT</title>
+</head>
+<body>
+    <video autoplay muted loop id="backgroundVideo">
+        <source src="{{ url_for('static', filename='videos/your-video.mp4') }}" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    
+    <nav class="navbar">
+        <div class="container">
+            <div class="burger" id="burger">&#9776;</div>
+            <h1>NSAK-BOT</h1>
+        </div>
+    </nav>
+
+    <div class="chat-container">
+        <div class="chatbox" id="chatbox"></div>
+        <div class="input-container">
+            <input type="text" id="userInput" placeholder="Type your message here..." />
+            <button id="sendBtn">Send</button>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
