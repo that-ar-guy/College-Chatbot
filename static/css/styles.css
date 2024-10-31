@@ -60,9 +60,9 @@ body {
     max-width: 500px;
     margin: 60px 0; /* Space it down from the navbar */
     padding: 20px;
-    background-color: rgba(255, 255, 255, 0.9);
-    border-radius: 8px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+    background: linear-gradient(145deg, #ffffff, #e6e6e6); /* Gradient background */
+    border-radius: 12px; /* More rounded corners */
+    box-shadow: 8px 8px 15px rgba(0, 0, 0, 0.2), -8px -8px 15px rgba(255, 255, 255, 0.7); /* Soft shadow */
     z-index: 2;
     text-align: center;
 }
@@ -72,10 +72,13 @@ body {
     overflow-y: auto;
     margin-bottom: 10px;
     padding: 10px;
-    background-color: #f9f9f9;
-    border-radius: 8px;
-    border: 1px solid #ccc;
+    background: rgba(255, 255, 255, 0.9); /* Slightly transparent background */
+    border-radius: 12px; /* Rounded corners */
+    border: 1px solid rgba(200, 200, 200, 0.5); /* Light border */
+    box-shadow: inset 0px 2px 5px rgba(0, 0, 0, 0.1); /* Inner shadow */
+    overflow: hidden; /* Hides overflow for nicer aesthetics */
 }
+
 
 .input-container {
     display: flex;
@@ -83,22 +86,80 @@ body {
     align-items: center;
 }
 
+
 #userInput {
     flex-grow: 1;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
+    padding: 12px;
+    border: 1px solid rgba(200, 200, 200, 0.5);
+    border-radius: 8px; /* Rounded corners */
+    background: rgba(255, 255, 255, 0.8); /* Slightly transparent */
+    transition: box-shadow 0.3s ease, border 0.3s ease; /* Smooth transitions */
+}
+
+#userInput:focus {
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Blue glow effect */
+    border: 1px solid #007bff; /* Blue border on focus */
 }
 
 #sendBtn {
-    padding: 10px 15px;
+    padding: 12px 15px;
     border: none;
-    border-radius: 8px;
+    border-radius: 8px; /* Rounded corners */
     cursor: pointer;
-    background-color: #007bff;
+    background: linear-gradient(135deg, #007bff, #0056b3); /* Gradient background */
     color: #fff;
     font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transitions */
+    box-shadow: 0 4px 8px rgba(0, 123, 255, 0.3); /* Shadow effect */
 }
+
+#sendBtn:hover {
+    background: linear-gradient(135deg, #0056b3, #004494); /* Darker gradient on hover */
+    transform: translateY(-2px); /* Slight lift effect */
+}
+
+/* Message styling */
+.message {
+    width: fit-content;
+    padding: 10px 15px;
+    border-radius: 20px; /* Rounded corners */
+    margin: 5px 0; /* Spacing between messages */
+    word-wrap: break-word; /* Allows long words to break */
+    position: relative; /* Position for pseudo-elements */
+}
+
+/* User Message Bubble */
+.user-message {
+    text-align: end;
+    background-color: #007bff; /* User bubble color */
+    color: white;
+    align-self: flex-end; /* Aligns user message to the right */
+    margin-left: auto; /* Pushes user message to the right */
+}
+
+/* Bot Message Bubble */
+.bot-message {
+    text-align: start;
+    background-color: #f1f1f1; /* Bot bubble color */
+    color: black;
+    align-self: flex-start; /* Aligns bot message to the left */
+    margin-right: auto; /* Pushes bot message to the left */
+}
+
+/* Optional: Add some styling for chatbox scrollbar */
+.chatbox::-webkit-scrollbar {
+    width: 8px;
+}
+
+.chatbox::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+}
+
+.chatbox::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
 
 /* Responsive Adjustments */
 @media (max-width: 768px) {
