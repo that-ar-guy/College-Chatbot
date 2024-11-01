@@ -56,3 +56,13 @@ document.getElementById('sendBtn').addEventListener('click', function() {
         }, 1000);
     }
 });
+
+// Toggle sidebar visibility
+burger.addEventListener("click", () => {
+    sidebar.style.left = "0"; // Show sidebar
+    sidebar.style.animation = "slideIn 0.3s forwards"; // Animate sidebar
+});
+
+closeBtn.addEventListener("click", () => {
+    sidebar.style.left = "-250px"; // Hide sidebar
+});

@@ -53,6 +53,39 @@ body {
     cursor: pointer;
 }
 
+/* Sidebar styling */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: -250px; /* Hide sidebar by default */
+    width: 250px;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    color: #fff;
+    padding: 20px;
+    transition: left 0.3s ease; /* Animation effect */
+    z-index: 2;
+}
+
+.sidebar ul {
+    list-style-type: none;
+}
+
+.sidebar ul li {
+    margin: 15px 0;
+}
+
+.sidebar ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.close-btn {
+    cursor: pointer;
+    font-size: 24px;
+    margin-top: 20px;
+}
+
 /* Chat Container Styling */
 .chat-container {
     position: relative;
